@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nagercoil Builders</title>
+
+<link rel="icon" type="image/jpg" href="logo.jpg">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    background:#0f0041;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:20px;
+}
+
+.logo img{
+    width:140px;
+}
+
+.navlinks{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.navlinks a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.navlinks a:hover{
+    color:#ffc800;
+}
+
+.contact{
+    background:#ffc800;
+    padding:10px 18px;
+    border-radius:8px;
+    color:black !important;
+}
+
+.contact:hover{
+    background:#e0a800;
+    color:black !important;
+}
+
+/* ================= BANNER ================= */
+
+.banner{
+    height:650px;
+    background:url('builders.png') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    text-align:center;
+}
+
+.banner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.3);
+}
+
+.bannercontent{
+    position:relative;
+    z-index:2;
+    color:white;
+    max-width:800px;
+}
+
+.bannercontent h1{
+    font-size:52px;
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.dream{
+    color:#ffc800;
+}
+
+.para{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.bannercontent button{
+    background:#ffc800;
+    padding:15px 35px;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.bannercontent button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Corner Design */
+
+.cornerline{
+    position:relative;
+    display:inline-block;
+}
+
+.cornerline::before{
+    content:"";
+    position:absolute;
+    top:-40px;
+    left:-40px;
+    width:70px;
+    height:70px;
+    border-top:4px solid #ffc800;
+    border-left:4px solid #ffc800;
+}
+
+/* ================= FEATURES SECTION ================= */
+
+.features{
+    position:relative;
+    padding:90px 20px;
+    text-align:center;
+    background:url('RECT1.png') center/cover no-repeat;
+}
+
+.features::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.3);
+}
+
+.features > *{
+    position:relative;
+    z-index:2;
+}
+
+.features h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:60px;
+}
+
+.features h2 span{
+    color:#ffc800;
+}
+
+/* Wrapper */
+
+.feature-wrapper{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+/* Circle Card */
+
+.feature{
+    width:260px;
+    height:260px;
+    background:#0a0f3c;
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    padding:20px;
+    transition:0.4s ease;
+}
+
+/* Icon */
+
+.icon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.icon img{
+    width:85px;
+    height:85px;
+    object-fit:contain;
+}
+
+/* Text */
+
+.feature p{
+    margin:0;
+    font-size:16px;
+}
+
+/* Hover Animation */
+
+.feature:hover{
+    transform:translateY(-15px) scale(1.08);
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    background:#ffc800;
+    color:#000;
+}
+
+.icon img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+
+/* Text */
+
+.feature p{
+    margin:0;
+    font-size:16px;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="logo.jpg" alt="Logo">
+    </div>
+
+    <ul class="navlinks">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Plan & Pricing</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#" class="contact">Enquiry</a></li>
+    </ul>
+</nav>
+
+<!-- ================= BANNER ================= -->
+
+<section class="banner">
+    <div class="bannercontent">
+        <h1 class="cornerline">
+            Your <span class="dream">dream</span> space, built <br>
+            to perfection.
+        </h1>
+
+        <p class="para">
+            Ready to bring your project to life?<br>
+            Let's create something extraordinary together.
+        </p>
+
+        <button>Book Now</button>
+    </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <h2><span>Nagercoil</span> Builders</h2>
+
+    <div class="feature-wrapper">
+        
+        <div class="feature">
+            <div class="icon"><img src="1.png" alt=""></div>
+            <p>Calendered Date</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon"><img src="2.png" alt=""></div>
+            <p>Quality Guaranteed</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon"><img src="3.png" alt=""></div>
+            <p>Low Cost</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon"><img src="4.png" alt=""></div>
+            <p>Top Rated</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon"><img src="5.png" alt=""></div>
+            <p>Budget Friendly</p>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
