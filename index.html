@@ -6,11 +6,11 @@
 <title>Nagercoil Builders</title>
 
 <link rel="icon" type="image/jpg" href="logo.jpg">
-
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* ================= GLOBAL ================= */
 
 *{
     margin:0;
@@ -19,30 +19,57 @@
     font-family:'Poppins', sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+    margin:0;
+    padding:0;
+}
+
+.container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
 /* ================= NAVBAR ================= */
 
 .navbar{
+    position:sticky;
+    top:0;
+    width:100%;
     background:#0f0041;
+    z-index:1000;
+    padding:12px 0;
+}
+
+.nav-inner{
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 200px;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items:center;
-    padding:20px;
 }
 
 .logo img{
-    width:140px;
+    width:120px;
 }
 
 .navlinks{
     display:flex;
-    gap:25px;
+    gap:30px;
     list-style:none;
+    align-items:center;
 }
 
 .navlinks a{
     color:white;
     text-decoration:none;
-    font-size:18px;
+    font-size:16px;
     transition:0.3s;
 }
 
@@ -52,24 +79,24 @@
 
 .contact{
     background:#ffc800;
-    padding:10px 18px;
+    padding:10px 25px;
     border-radius:8px;
     color:black !important;
+    font-weight:600;
 }
 
 .contact:hover{
     background:#e0a800;
-    color:black !important;
 }
 
-/* ================= BANNER ================= */
+/* ================= HERO SECTION ================= */
 
 .banner{
-    min-height:100vh;
+    height:100vh;
     background:url('builders.png') center/cover no-repeat;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     position:relative;
     text-align:center;
 }
@@ -78,21 +105,22 @@
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.3);
+    background:rgba(0,0,0,0.45);
 }
 
 .bannercontent{
     position:relative;
     z-index:2;
     color:white;
-    max-width:800px;
+    max-width:850px;
+    padding:0 20px;
 }
 
 .bannercontent h1{
-    font-size:44px;
+    font-size:52px;
     font-weight:700;
     line-height:1.2;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .dream{
@@ -101,12 +129,12 @@
 
 .para{
     font-size:20px;
-    margin-bottom:30px;
+    margin-bottom:35px;
 }
 
 .bannercontent button{
     background:#ffc800;
-    padding:15px 35px;
+    padding:16px 40px;
     border:none;
     border-radius:8px;
     font-size:18px;
@@ -115,52 +143,33 @@
 }
 
 .bannercontent button:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transform:translateY(-4px);
 }
 
-/* Corner Design */
-
-.cornerline{
-    position:relative;
-    display:inline-block;
-}
-
-.cornerline::before{
-    content:"";
-    position:absolute;
-    top:-40px;
-    left:-40px;
-    width:70px;
-    height:70px;
-    border-top:4px solid #ffc800;
-    border-left:4px solid #ffc800;
-}
-
-/* ================= FEATURES SECTION ================= */
+/* ================= FEATURES ================= */
 
 .features{
-    position:relative;
-    padding:90px 20px;
-    text-align:center;
+    padding:100px 0;
     background:url('RECT1.png') center/cover no-repeat;
+    position:relative;
+    text-align:center;
 }
 
 .features::before{
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.3);
+    background:rgba(255,255,255,0.3);
 }
 
-.features > *{
+.features .container{
     position:relative;
     z-index:2;
 }
 
 .features h2{
     font-size:42px;
-    font-weight:700;
+    font-weight:600;
     margin-bottom:60px;
 }
 
@@ -168,79 +177,484 @@
     color:#ffc800;
 }
 
-/* Wrapper */
-
 .feature-wrapper{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    flex-wrap:wrap;
-    max-width:1200px;
-    margin:0 auto;
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap:30px;
+    justify-items:center;
 }
 
-/* Circle Card */
-
 .feature{
-    width:200px;
-    height:200px;
+    width:210px;
+    height:210px;
     background:#0a0f3c;
     border-radius:50%;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
     color:#fff;
-    padding:20px;
     transition:0.4s ease;
 }
 
-/* Icon */
-
-.icon{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.feature img{
+    width:95px;
+    height:95px;
     margin-bottom:15px;
 }
 
-.icon img{
-    width:85px;
-    height:85px;
-    object-fit:contain;
-}
-
-/* Text */
-
 .feature p{
-    margin:0;
     font-size:16px;
 }
 
-/* Hover Animation */
-
 .feature:hover{
-    transform:translateY(-15px) scale(1.08);
-    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+    transform:translateY(-12px);
     background:#ffc800;
     color:#000;
 }
 
-.icon img{
-    width:120px;
-    height:120px;
+/* ================= WHY CHOOSE ================= */
+
+.row2{
+    background:#f4f4f4;
+    padding:100px 0;
+    text-align:center;
+}
+
+.row2 h2{
+    font-size:42px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.row2 p{
+    font-size:18px;
+    line-height:1.8;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.choose{
+    color:#ffc800;
+}
+
+/* ================= RESPONSIVE ================= */
+
+.experience{
+    background:#e6e8b6;
+    padding:60px 0;
+}
+
+.exp-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+    align-items:start;
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+.exp-left,
+.exp-middle{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.exp-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.exp-item img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+}
+
+.exp-item h3{
+    font-size:18px;
+    margin-bottom:6px;
+    font-weight:600;
+    line-height:1.2;
+}
+
+.exp-item p{
+    font-size:13px;
+    line-height:1.5;
+    color:#333;
+}
+
+.exp-right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.exp-right img{
+    width:100%;
+    max-width:350px;
+    height:auto;
     object-fit:contain;
 }
 
-/* Text */
+/* ================= SERVICES ================= */
 
-.feature p{
-    margin:0;
-    font-size:16px;
+.services{
+    background:#f8f8f8;
+    padding:80px 20px;
+    text-align:center;
 }
 
+.services h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:25px;
+}
 
+.services h2 span{
+    color:#ffc800;
+}
+
+.services-desc{
+    max-width:900px;
+    margin:0 auto 50px;
+    font-size:16px;
+    line-height:1.8;
+    color:#333;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:30px;
+    max-width:1100px;
+    margin:0 auto 30px;
+}
+
+.service-card{
+    position:relative;
+    height:280px;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.service-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 0.5s ease;
+}
+
+.service-card:hover img{
+    transform:scale(1.1);
+}
+
+.service-label{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    background:#210053;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    z-index:2;
+}
+
+.view-more-btn{
+    background:#ffc800;
+    color:#000;
+    padding:12px 40px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.view-more-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ================= CLIENT REVIEWS ================= */
+
+.reviews{
+    background:#e6e8b6;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.reviews h2{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:60px;
+}
+
+.reviews h2 span{
+    color:#ffc800;
+}
+
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.review-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.3s ease;
+}
+
+.review-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.review-card:nth-child(2){
+    transform:translateY(-20px);
+}
+
+.review-card:nth-child(2):hover{
+    transform:translateY(-28px);
+}
+
+.review-img-wrapper{
+    position:relative;
+    width:100%;
+    height:200px;
+}
+
+.review-bg{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.review-profile{
+    position:absolute;
+    bottom:-30px;
+    left:50%;
+    transform:translateX(-50%);
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+.review-content{
+    padding:45px 25px 25px;
+}
+
+.review-content h3{
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.review-content p{
+    font-size:14px;
+    line-height:1.6;
+    color:#555;
+    margin-bottom:15px;
+}
+
+.stars{
+    display:flex;
+    justify-content:center;
+    gap:5px;
+}
+
+.stars span{
+    font-size:20px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:#0a0f3c;
+    color:white;
+    padding:60px 20px 40px;
+}
+
+.footer-container{
+    max-width:1400px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1.5fr;
+    gap:60px;
+}
+
+.footer-col h3{
+    color:#ffc800;
+    font-size:22px;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.footer-logo{
+    width:140px;
+    margin-bottom:20px;
+}
+
+.footer-desc{
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:25px;
+    color:#ddd;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#1a1f4d;
+    border-radius:50%;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:#ffc800;
+    transform:translateY(-3px);
+}
+
+.social-icons img{
+    width:24px;
+    height:24px;
+}
+
+.footer-col ul{
+    list-style:none;
+}
+
+.footer-col ul li{
+    margin-bottom:12px;
+}
+
+.footer-col ul li a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.footer-col ul li a:hover{
+    color:#ffc800;
+    padding-left:5px;
+}
+
+.contact-list li{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    margin-bottom:15px;
+    color:#ddd;
+    font-size:15px;
+    line-height:1.6;
+}
+
+.contact-list .icon{
+    font-size:20px;
+    flex-shrink:0;
+}
+
+/* ================= RESPONSIVE MEDIA QUERIES ================= */
+
+@media (max-width:1024px){
+    .feature-wrapper{
+        grid-template-columns:repeat(3,1fr);
+    }
+    
+    .exp-grid{
+        grid-template-columns:1fr;
+    }
+    
+    .reviews-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+    
+    .footer-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+}
+
+@media (max-width:768px){
+    .feature-wrapper{
+        grid-template-columns:repeat(2,1fr);
+    }
+    
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+    
+    .reviews-grid{
+        grid-template-columns:1fr;
+    }
+    
+    .bannercontent h1{
+        font-size:36px;
+    }
+    
+    .features h2,
+    .row2 h2,
+    .services h2,
+    .reviews h2{
+        font-size:30px;
+    }
+    
+    .navlinks{
+        gap:20px;
+    }
+    
+    .navlinks a{
+        font-size:15px;
+    }
+}
+
+@media (max-width:480px){
+    .feature-wrapper{
+        grid-template-columns:1fr;
+    }
+    
+    .bannercontent h1{
+        font-size:28px;
+    }
+    
+    .features h2,
+    .row2 h2,
+    .services h2,
+    .reviews h2{
+        font-size:24px;
+    }
+    
+    .navlinks{
+        flex-direction:column;
+        gap:10px;
+    }
+}
 
 </style>
 </head>
@@ -250,31 +664,30 @@
 <!-- ================= NAVBAR ================= -->
 
 <nav class="navbar">
-    <div class="logo">
-        <img src="logo.jpg" alt="Logo">
+    <div class="nav-inner">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+
+        <ul class="navlinks">
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Plan & Pricing</a></li>
+            <li><a href="">Projects</a></li>
+            <li><a href="" class="contact">Enquiry</a></li>
+        </ul>
     </div>
-
-    <ul class="navlinks">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Plan & Pricing</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#" class="contact">Enquiry</a></li>
-    </ul>
 </nav>
-
-<!-- ================= BANNER ================= -->
 
 <section class="banner">
     <div class="bannercontent">
-        <h1 class="cornerline">
+        <h1>
             Your <span class="dream">dream</span> space, built <br>
             to perfection.
         </h1>
 
         <p class="para">
-            Ready to bring your project to life?<br>
-            Let's create something extraordinary together.
+            Ready to bring your project to life? Let's create something extraordinary together.
         </p>
 
         <button>Book Now</button>
@@ -284,39 +697,285 @@
 <!-- ================= FEATURES ================= -->
 
 <section class="features">
+    <div class="container">
+        <h2><span>Nagercoil</span> Builders</h2>
 
-    <h2><span>Nagercoil</span> Builders</h2>
+        <div class="feature-wrapper">
+            <div class="feature">
+                <img src="1.png" alt="">
+                <p>Calendered Date</p>
+            </div>
 
-    <div class="feature-wrapper">
-        
-        <div class="feature">
-            <div class="icon"><img src="1.png" alt=""></div>
-            <p>Calendered Date</p>
+            <div class="feature">
+                <img src="2.png" alt="">
+                <p>Quality Guaranteed</p>
+            </div>
+
+            <div class="feature">
+                <img src="3.png" alt="">
+                <p>Low Cost</p>
+            </div>
+
+            <div class="feature">
+                <img src="4.png" alt="">
+                <p>Top Rated</p>
+            </div>
+
+            <div class="feature">
+                <img src="5.png" alt="">
+                <p>Budget Friendly</p>
+            </div>
         </div>
+    </div>
+</section>
 
-        <div class="feature">
-            <div class="icon"><img src="2.png" alt=""></div>
-            <p>Quality Guaranteed</p>
-        </div>
+<!-- ================= WHY CHOOSE ================= -->
 
-        <div class="feature">
-            <div class="icon"><img src="3.png" alt=""></div>
-            <p>Low Cost</p>
-        </div>
+<section class="row2">
+    <div class="container">
+        <h2>Why <span class="choose">Choose</span> Us</h2>
+        <p>
+            At Nagercoil Builders, we deliver top-quality construction with precision, reliability, and excellence.
+            Our expert team ensures on-time project completion, using premium materials and innovative techniques.
+            With a commitment to safety and customer satisfaction, we bring your vision to life with professionalism and integrity.
+            Choose us for a hassle-free building experience!
+        </p>
+    </div>
+</section>
 
-        <div class="feature">
-            <div class="icon"><img src="4.png" alt=""></div>
-            <p>Top Rated</p>
-        </div>
+<!-- =============Experienced===============-->
 
-        <div class="feature">
-            <div class="icon"><img src="5.png" alt=""></div>
-            <p>Budget Friendly</p>
+<section class="experience">
+  <div class="container exp-grid">
+
+    <div class="exp-left">
+
+      <div class="exp-item">
+        <img src="21.png" alt="Experienced Team">
+        <div>
+          <h3>Experienced Team</h3>
+          <p>Our experienced team combines expertise, innovation, and dedication to deliver exceptional construction results tailored to your vision.</p>
         </div>
+      </div>
+
+      <div class="exp-item">
+        <img src="22.png" alt="Customizable Designs">
+        <div>
+          <h3>Customizable Designs</h3>
+          <p>Experience the freedom of customizable designs tailored to match your unique vision and lifestyle.</p>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <img src="23.png" alt="Timely Completion">
+        <div>
+          <h3>Timely Completion</h3>
+          <p>We are committed to delivering every project on time, ensuring efficient execution without compromising on quality.</p>
+        </div>
+      </div>
 
     </div>
 
+    <div class="exp-middle">
+
+      <div class="exp-item">
+        <img src="24.png" alt="Quality Construction">
+        <div>
+          <h3>Quality Construction</h3>
+          <p>Delivering excellence through superior craftsmanship, durable materials, and meticulous attention to detail in every project.</p>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <img src="25.png" alt="Transparent Process">
+        <div>
+          <h3>Transparent Process</h3>
+          <p>Our transparent process ensures clear communication, no hidden costs, and full visibility at every stage, so you can trust us to deliver exactly what we promise.</p>
+        </div>
+      </div>
+      
+      <div class="exp-item">
+        <img src="26.png" alt="In-house Team">
+        <div>
+          <h3>In-house Team</h3>
+          <p>Our in-house team of experts ensures every project is executed with precision, expertise, and dedication.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="exp-right">
+      <img src="side1.png" alt="House">
+    </div>
+
+  </div>
 </section>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services">
+  <div class="container">
+    <h2><span>Services</span> We Provide</h2>
+    <p class="services-desc">
+      We offer a comprehensive range of construction services, including residential and commercial building, renovation, interior design, and project management. Our skilled team ensures high-quality craftsmanship, timely delivery, and cost-effective solutions. From concept to completion, we turn your ideas into reality with excellence and reliability.
+    </p>
+
+    <div class="services-grid">
+      
+      <div class="service-card">
+        <img src="consulting.png" alt="Consulting">
+        <div class="service-label">Consulting</div>
+      </div>
+
+      <div class="service-card">
+        <img src="estimate.png" alt="Estimate">
+        <div class="service-label">Estimate</div>
+      </div>
+
+      <div class="service-card">
+        <img src="plan.jpeg" alt="Plan & Design">
+        <div class="service-label">Plan & Design</div>
+      </div>
+
+      <div class="service-card">
+        <img src="construct.png" alt="Construction">
+        <div class="service-label">Construction</div>
+      </div>
+
+      <div class="service-card">
+        <img src="flooring.png" alt="Flooring Work">
+        <div class="service-label">Flooring Work</div>
+      </div>
+
+      <div class="service-card">
+        <img src="painting.png" alt="Painting Work">
+        <div class="service-label">Painting Work</div>
+      </div>
+
+    </div>
+
+    <button class="view-more-btn">View More</button>
+
+  </div>
+</section>
+
+<!-- ================= CLIENT REVIEWS ================= -->
+
+<section class="reviews">
+  <div class="container">
+    <h2>Our <span>Client</span> Reviews</h2>
+
+    <div class="reviews-grid">
+      
+      <div class="review-card">
+        <div class="review-img-wrapper">
+          <img src="Rectangle 16.png" alt="Background" class="review-bg">
+          <img src="aron.jpeg" alt="Aaron" class="review-profile">
+        </div>
+        <div class="review-content">
+          <h3>Aaron</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Netus aliquam aliquet urna eu quis vel non odio urna.</p>
+          <div class="stars">
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-img-wrapper">
+          <img src="Rectangle 17.png" alt="Background" class="review-bg">
+          <img src="adlina.jpeg" alt="Adalina" class="review-profile">
+        </div>
+        <div class="review-content">
+          <h3>Adalina</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Netus aliquam aliquet urna eu quis vel non odio urna.</p>
+          <div class="stars">
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-img-wrapper">
+          <img src="Rectangle 18.png" alt="Background" class="review-bg">
+          <img src="client.jpeg" alt="Client" class="review-profile">
+        </div>
+        <div class="review-content">
+          <h3>Client</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Netus aliquam aliquet urna eu quis vel non odio urna.</p>
+          <div class="stars">
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-col">
+      <img src="logo.jpg" alt="Nagercoil Builders Logo" class="footer-logo">
+      <p class="footer-desc">
+        Nagercoil Builders offering a range of services from residential and commercial building to interior design and renovation.
+      </p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#" aria-label="YouTube"><img src="youtube.png" alt="YouTube"></a>
+        <a href="#" aria-label="Facebook"><img src="communication.png" alt="Facebook"></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Plans and Pricing</a></li>
+        <li><a href="#">Projects</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <ul class="contact-list">
+        <li>
+          <span class="icon">📞</span>
+          <span>+91 9597751076, 9443102048</span>
+        </li>
+        <li>
+          <span class="icon">✉️</span>
+          <span>nagercoilbuilders2@gmail.com</span>
+        </li>
+        <li>
+          <span class="icon">🌐</span>
+          <span>www.nagercoilbuilders.com</span>
+        </li>
+        <li>
+          <span class="icon">📍</span>
+          <span>4/26A Adaikalappattinam, Pavoorchattram.</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
 
 </body>
 </html>
